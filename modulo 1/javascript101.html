@@ -15,12 +15,14 @@
         var letra = 'b';
         var altura = 1.73;
         var colecao = ["Celso", 32, 'c', 1.94];
+        var humano = true;
         var pessoa = 
         {
             nome: 'Daniel',
             idade: 19,
             letra: 'd',
             altura: 1.98,
+            humano: true,
         }
 
         console.log(nome);
@@ -29,6 +31,17 @@
         console.log(altura);
         console.log(colecao);
         console.log(pessoa);
+        console.log(colecao[0]);
+        console.log(pessoa.nome);
+
+        function checkData(nome, idade, altura)
+        {
+            console.log(`O aluno ${nome} possui ${idade} anos, e tem ${altura} de altura.`);
+        }
+        checkData(nome, idade, altura);
+
+        const checkObjectData = ({nome, idade, altura}) => (console.log(`O aluno ${nome} possui ${idade} anos, e tem ${altura} de altura.`));
+        checkObjectData(pessoa);
     </script>
 </body>
 </html>
