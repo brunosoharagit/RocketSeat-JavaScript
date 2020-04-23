@@ -9,11 +9,45 @@
     
     <script>
         var idade = 18;
+        var genero = 'M';
+        
 
-        if (idade >= 18)
+        // A) condicional
+        function retornaMaioridade(idade)
         {
-            return true;
+            if (idade >= 18)
+            {
+                return 'Maior de idade'
+            }
+
+            else
+            {
+                return 'Menor de idade'
+            }
         }
+
+        var resultado1 = retornaMaioridade(18);
+        console.log(resultado1);
+
+        
+        // B) condicional - switch...case...default
+        function retornaGenero(genero)
+        {
+            switch(genero)
+            {
+                case 'M':
+                    return 'Masculino';
+                case 'F':
+                    return 'Feminino';
+                case 'O':
+                    return 'Outro';
+                default:
+                    return;
+            }
+        }
+
+        var resultado = retornaGenero('F');
+        console.log(resultado);
 
     </script>
 </body>
