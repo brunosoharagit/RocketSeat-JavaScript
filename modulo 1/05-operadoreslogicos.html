@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //AND, OR, NOT
+
+        //  A) AND (&&) - quando duas afirmações forem verdadeidas
+        var genero = 'M', idade = 23;
+
+        if ((genero === 'M') && (idade >= 18))
+        {
+            console.log('Ok.');
+        }
+        else
+        {
+            console.log('Alguma coisa está de errado aqui.');
+        }
+
+       //B) OR (||) - quando uma das afirmações forem verdadeiras, as duas se tornam
+       var genero1 = 'F', idade1 = 10;
+
+       if ((genero1 === 'M') || (idade1 >= 18))
+       {
+           console.log('Ok.');
+       }
+       else
+       {
+           console.log('Alguma coisa de errado está aqui.');
+       }
+
+       // C) NOT (!)
+       var genero2 = 'F';
+       if (genero2 !== 'M')
+       {
+           console.log('Ok.');
+       }
+       else
+       {
+           console.log('Alguma coisa de errado está aqui.');
+       }
+
+       // D) Armazenamento de dados
+       var genero3 = 'M';
+       var masculino;
+       
+       if (genero3 === 'M')
+       {
+           console.log('Ok');
+       }
+       else
+       {
+           console.log('Alguma coisa está de errado aqui.')
+       }
+    </script>
+</body>
+</html>
