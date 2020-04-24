@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>Digite seu nome: </p>
+        <input type="text" name="nome" id="nome" class="nome">
+
+        <button class="botao">Adicionar</button>
+    </div>
+
+
+    <script>
+        var inputEl = document.getElementById('nome');
+        console.log(inputEl);
+
+        var inputEl = document.getElementsByTagName('nome');
+        console.log(inputEl);
+
+        var inputEl = document.getElementsByClassName('nome');
+        console.log(inputEl);
+
+        var inputEl = document.querySelector('div#app input');
+        console.log(inputEl);
+
+        var inputEl = document.querySelector('input[name=nome]');
+        var buttonEl = document.querySelector('button.botao');
+        console.log(buttonEl);
+        buttonEl.onclick = function()
+        {
+            var text = inputEl.value;
+            alert(`Bem-vindo, ${text}.`);
+        }
+    </script>
+</body>
+</html>
