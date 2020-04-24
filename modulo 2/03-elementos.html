@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="nhemon">
+        <button class="botao">Adicionar</button><br>
+    </div>
+
+    <script>
+        // cria um elemento de link
+        var linkEl = document.createElement('a');
+        linkEl.setAttribute('target', '_blank');
+        linkEl.setAttribute('href', 'https://github.com/brunosoharagit/RocketSeat-JavaScript');
+        linkEl.setAttribute('title', 'Repositório de brunosoharagit das aulas da Rocketseat')
+        
+        //o texto que será criado
+        var txtEl = document.createTextNode('Acessar o repositório das aulas'); 
+        linkEl.appendChild(txtEl);
+
+        //referencia o container
+        var ctnEl = document.querySelector('#app'); 
+        ctnEl.appendChild(linkEl);
+
+        var inputEl = document.querySelector('#nhemon');
+        ctnEl.removeChild(inputEl);
+    </script>
+</body>
+</html>
