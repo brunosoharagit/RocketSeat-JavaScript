@@ -1,0 +1,9 @@
+axios.get('https://api.github.com/users/brunosoharagit')
+    .then(function(response)
+    {
+        console.log(response.data.avatar_url);
+    })
+    .catch(function(reject)
+    {
+        console.warn(error);
+    });
