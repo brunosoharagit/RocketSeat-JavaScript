@@ -2,26 +2,20 @@ var listElement = document.querySelector('#app ul');
 var inputElement = document.querySelector('#app input');
 var buttonElement = document.querySelector('#app button');
 
-var mixfoods = 
-[
-    'Feijão com udon',
-    'Udon de abacaxi',
-    'Carne com sorvete de baunilha',
-    'Linguiça toscana com canela'
-];
+var products = JSON.parse(localStorage.getItem('list_prds')) || [];
 
-function renderMixes()
+function renderPrd()
 {
     listElement.innerHTML = '';
 
-    for(mixfood of mixfoods)
+    for(product of products)
     {
         //Renderiza a lista
-        var mixElement = document.createElement('li');
-        var mixText = document.createTextNode(mixfood);
+        var prdElement = document.createElement('li');
+        var prdText = document.createTextNode(product);
 
-        mixElement.appendChild(mixText);
-        listElement.appendChild(mixElement);
+        prdElement.appendChild(prdText);
+        listElement.appendChild(prdElement);
 
 
         //Cria um link de remoção de um item
@@ -30,34 +24,39 @@ function renderMixes()
 
         linkElement.setAttribute('href', '#');
 
-        var pos = mixfoods.indexOf(mixfood);
-        linkElement.setAttribute('onclick', 'removeMix('+pos+')');
+        var pos = products.indexOf(product);
+        linkElement.setAttribute('onclick', 'removePrd('+pos+')');
 
         linkElement.appendChild(linkText);
-        mixElement.appendChild(linkElement);
+        prdElement.appendChild(linkElement);
 
-        listElement.appendChild(mixElement);
+        listElement.appendChild(prdElement);
     }
 };
 
-renderMixes();
+renderPrd();
 
 
-function addMix()
+function addPrd()
 {
-    var mixText = inputElement.value;
+    var prdText = inputElement.value;
 
-    mixfoods.push(mixText);
+    products.push(prdText);
     inputElement.value = '';
-    renderMixes();
+    renderPrd();
+    saveData();
 }
 
 
-buttonElement.onclick = addMix;
+buttonElement.onclick = addPrd;
 
-function removeMix(pos)
+function removePrd(pos)
 {
-    mixfoods.splice(pos, 1);
-    renderMixes();
+    products.splice(pos, 1);
+    renderPrd();
 }
 
+function saveData()
+{
+    localStorage.setItem('list_prds', JSON.stringify(products));
+}
