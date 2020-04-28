@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+
+        </ul>
+        <input type="text" class="nome">
+        <button>Adicionar</button>
+    </div>
+
+    <script>
+        var listElement = document.querySelector('#app ul');
+        var inputElement = document.querySelector('#app input');
+        var buttonElement = document.querySelector('#app button');
+
+        var users = ["Diego", "Gabriel", "Lucas"];
+
+        function renderizarLista()
+        {
+            listElement.innerHTML = '';
+
+            for (user of users)
+            {
+                var userElement = document.createElement('li');
+                var userText = document.createTextNode(user);
+    
+                userElement.appendChild(userText);
+                listElement.appendChild(userElement);
+
+
+            }   
+        }
+
+        renderizarLista();
+
+        function adicionar()
+        {
+            var userText = inputElement.value;
+
+            users.push(userText);
+            inputElement.value = '';
+            renderizarLista();
+        }
+
+        buttonElement.onclick = adicionar;
+    </script>
+</body>
+</html>
